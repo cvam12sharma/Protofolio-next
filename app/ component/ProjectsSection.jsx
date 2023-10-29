@@ -45,7 +45,7 @@ const projectsData = [
     title: "Housing",
     description: " afforable  House price ",
     image: "/images/projects/house.jpeg",
-    tag: ["All", "Mobile"],
+    tag: ["All", "ML"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -68,6 +68,11 @@ export const ProjectsSection = () => {
   name="Web"
   onClick={handleTagChange}
   isSelected={tag === "Web"}
+/>
+<ProjectTag
+  name="ML"
+  onClick={handleTagChange}
+  isSelected={tag === "ML"}
 />
 
 </div>
