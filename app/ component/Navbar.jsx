@@ -6,6 +6,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { AiOutlineAlignCenter } from "react-icons/ai";
 import MenuOverlay from "./MenuOverlay";
 
+
 const navLink = [
     {
         title: "About",
@@ -17,7 +18,7 @@ const navLink = [
     },
     {
         title: "Contact",
-        href: "#contact",
+        href: "#Email",
     }
 
 ]
@@ -29,7 +30,7 @@ const Navbar = () => {
         <nav className=" fixed top-0 left-0 right-0 z-10  bg-black bg-opacity-90">
             <div className="flex flex-wrap items-center justify-between mx-auto px-4  py-2">
                 <Link href={"/"} className=" text-2xl md:text-5xl text-white  font-semibold">
-                    LOGO
+                  cv@m
                 </Link>
                 <div className="mobile-menu block md:hidden ">
                     {!navbarOpen ? (
@@ -55,8 +56,9 @@ const Navbar = () => {
                             navLink.map((
                                 link, index) => (
                                 <li key={index}>
-                                    <NavLink href={link.href}
-                                        title={link.title}></NavLink>
+                                    <NavLink selector={link.href}
+                                    title={link.title}
+                                        ></NavLink>
                                 </li>
                             ))
                         }
