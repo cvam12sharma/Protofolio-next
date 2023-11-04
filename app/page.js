@@ -4,7 +4,7 @@ import Navbar from './ component/Navbar';
 import AboutSection from './ component/AboutSection';
 import { ProjectsSection } from './ component/ProjectsSection';
 import EmailSection from './ component/EmailSection';
-import Footer from './ component/footer';
+import Footer from './ component/Footer';
 
 
 
