@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import GithubIcon from '/public/images/github.svg';
-import LinkedinIcon from '/public/images/linkdin.svg';
+
 import Link from "next/link";
 import Image from "next/image";
 import NextIcon from '/public/next.svg';
+
+import { Github } from "./svgs";
+import { Linkedin } from "./svgs";
 
 const EmailSection = () => {
   return (
@@ -18,14 +20,14 @@ const EmailSection = () => {
           to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
-            <Image src={GithubIcon} alt="GitHub Icon" width={8} height={8} />
+          <Link href="https://github.com/cvam12sharma">
+            <Github className=" h-[75px] w-[75px]" />
           </Link>
-          <Link href="linkedin.com">
-            <Image src={LinkedinIcon} alt="LinkedIn Icon" width={40} height={40} />
+          <Link href="https://www.linkedin.com/in/shivam-sharma-3b7a061a6/">
+    <Linkedin className=" h-[75px] w-[75px]"/>
           </Link>
           <div>
-            <Image src={NextIcon} alt="Next Icon" width={40} height={40} />
+           <Github/>
           </div>
         </div>
       </div>

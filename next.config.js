@@ -1,5 +1,9 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
-    webpack: (config, options) => {
+    reactStrictMode: true,
+    swcMinify: true,
+  
+    webpack(config) {
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -7,3 +11,4 @@ module.exports = {
       return config;
     },
   };
+  
