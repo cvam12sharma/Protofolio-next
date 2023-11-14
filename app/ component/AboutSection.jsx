@@ -49,58 +49,45 @@ const TAB_DATA=[
 },
 ];
 
+
+// ... (imports)
+
 const AboutSection = () => {
     const [tab, setTab] = useState("skills");
-    const [isPending, starTransition] = useTransition();
-
+    const [isPending, startTransition] = useTransition();
+  
     const handleTabChange = (id) => {
-        starTransition(() => {
-            setTab(id);
-        }
-        );
-    }
-
+      startTransition(() => {
+        setTab(id);
+      });
+    };
+  
     return (
-        <section className="text-white">
-            <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4  xl:gap-16 sm:py-16 xl:px-16">
-                <img src="/images/PC.png" width={500} height={500} />
-                <div>
-                    <h2 className='text-4xl font-bold text-white mb-4'>About me </h2>
-                    <p className='text-base lg:text-lg'>
-                        Hello, I'm Shivam Sharma, a front-end developer with a passion for crafting digital experiences. Beyond coding,
-                        I find joy in watching movies, diving into books,
-                        and hitting the gym. Exploring the world of technology and enjoying
-                        life's little pleasures is what defines me.I thrive on creating intuitive user interfaces and bringing designs to life with code. My love for storytelling extends from coding to the worlds portrayed in books and movies.
-                    </p>
-                    <div className='flex flex-row mt-8 justify-between '>
-                        <TabButton
-                            onClick={() => handleTabChange("skills")}
-                            active={tab === "skills"}
-                        >
-                            Skills
-                        </TabButton>
-
-                        <TabButton
-                            onClick={() => handleTabChange("education")}
-                            active={tab === "education"}
-                        >
-                            Education
-                        </TabButton>
-                        <TabButton
-                            onClick={() => handleTabChange("experience")}
-                            active={tab === "experience"}
-                        >
-                            Experience
-                        </TabButton>
-
-                    </div>
-                    <div className="mt-8">{TAB_DATA.find((t)=>t.id==tab).content } 
-                        
-                    </div>
-                </div>
+      <section className="text-white">
+        <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4  xl:gap-16 sm:py-16 xl:px-16">
+          <Image src="/images/PC.png" alt="A picture of the developer at work" width={500} height={500} />
+          <div>
+            <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
+            <p className="text-base lg:text-lg">
+              Hello, I&apos;m Shivam Sharma, a front-end developer with a passion for crafting digital experiences. Beyond coding, I find joy in watching movies, diving into books, and hitting the gym. Exploring the world of technology and enjoying life's little pleasures is what defines me. I thrive on creating intuitive user interfaces and bringing designs to life with code. My love for storytelling extends from coding to the worlds portrayed in books and movies.
+            </p>
+            <div className="flex flex-row mt-8 justify-between ">
+              <TabButton onClick={() => handleTabChange("skills")} active={tab === "skills"}>
+                Skills
+              </TabButton>
+              <TabButton onClick={() => handleTabChange("education")} active={tab === "education"}>
+                Education
+              </TabButton>
+              <TabButton onClick={() => handleTabChange("experience")} active={tab === "experience"}>
+                Experience
+              </TabButton>
             </div>
-        </section>
-    )
-}
-
-export default AboutSection;
+            <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div>
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+  export default AboutSection;
+  
